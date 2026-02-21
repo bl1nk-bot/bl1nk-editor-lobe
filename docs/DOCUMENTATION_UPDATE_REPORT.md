@@ -11,7 +11,7 @@ This report analyzes the current project structure and documentation, identifyin
 ### Key Directories
 
 #### src/
-
+```
   🔷 App.tsx
 
   📁 __tests__/
@@ -1172,12 +1172,12 @@ This report analyzes the current project structure and documentation, identifyin
       🔷 node-utils.ts
       🔷 updatePosition.ts
       🔷 url.ts
-
   📄 todo.md
 
   📋 tsconfig.json
 
   🔷 vitest.config.ts
+```
 
 ## Documentation Status
 
@@ -1237,4 +1237,3 @@ Ensure consistent folder organization across all services
    - Standardize project structure
 
 ---
-*This report was generated automatically by the Documentation Update Script*
