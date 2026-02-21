@@ -8,13 +8,13 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'jsdom',
-    setupFiles: ['./src/test/setup.ts'],
+    setupFiles: ['./app/test/setup.ts'],
     coverage: {
       provider: 'v8',
       reporter: ['text', 'json', 'html'],
       exclude: [
         'node_modules/',
-        'src/test/',
+        'app/test/',
         '**/*.d.ts',
         '**/*.config.*',
         '**/coverage/**',
@@ -24,14 +24,14 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'),
+      '@': path.resolve(__dirname, './app'),
       '@shared': path.resolve(__dirname, './shared'),
-      '@components': path.resolve(__dirname, './src/components'),
-      '@lib': path.resolve(__dirname, './src/lib'),
-      '@hooks': path.resolve(__dirname, './src/hooks'),
-      '@types': path.resolve(__dirname, './src/types'),
-      '@utils': path.resolve(__dirname, './src/utils'),
-      '@plugins': path.resolve(__dirname, './src/plugins'),
+      '@components': path.resolve(__dirname, './app/components'),
+      '@lib': path.resolve(__dirname, './app/lib'),
+      '@hooks': path.resolve(__dirname, './app/hooks'),
+      '@types': path.resolve(__dirname, './app/types'),
+      '@utils': path.resolve(__dirname, './app/utils'),
+      '@plugins': path.resolve(__dirname, './app/plugins'),
       '@server': path.resolve(__dirname, './server'),
       '@agents': path.resolve(__dirname, './agents')
     }
