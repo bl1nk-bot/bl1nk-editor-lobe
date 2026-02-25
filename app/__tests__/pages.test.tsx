@@ -42,9 +42,9 @@ describe('Pages Rendering', () => {
     expect(screen.getByText(/AI-Powered IDE/i)).toBeInTheDocument()
   })
 
-  it('renders DashboardPage', () => {
+  it('renders DashboardPage', async () => {
     render(<DashboardPage />)
-    expect(screen.getByText(/Dashboard/i)).toBeInTheDocument()
+    expect(await screen.findByText(/Dashboard/i)).toBeInTheDocument()
   })
 
   it('renders LoginPage', () => {
