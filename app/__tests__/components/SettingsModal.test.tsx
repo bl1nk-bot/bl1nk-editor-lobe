@@ -135,7 +135,7 @@ describe('SettingsModal', () => {
     const mockUpdate = vi.fn()
     render(<SettingsModal {...defaultProps} onUpdateProjectProperty={mockUpdate} />)
 
-    const favoriteToggle = screen.getByRole('checkbox', { name: /fav-toggle/i })
+    const favoriteToggle = screen.getByLabelText('ปักหมุดในรายการโปรด')
     fireEvent.click(favoriteToggle)
 
     expect(mockUpdate).toHaveBeenCalledWith('isFavorite', true)
