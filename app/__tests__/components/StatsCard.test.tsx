@@ -60,7 +60,7 @@ describe('StatsCard', () => {
 
   it('title is uppercase', () => {
     render(<StatsCard title="my title" value="123" />)
-    const title = screen.getByText('MY TITLE')
+    const title = screen.getByText('my title')
     expect(title).toHaveClass('uppercase')
   })
 
