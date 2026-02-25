@@ -120,7 +120,7 @@ describe('NoteEditorModal', () => {
       <NoteEditorModal isOpen={true} onClose={mockClose} onSave={mockSave} />
     )
 
-    const modal = screen.getByText('New Note').closest('div')
+    const modal = screen.getByText('New Note').closest('.bg-white')
     expect(modal).toHaveClass('bg-white', 'dark:bg-gray-800')
   })
 })
