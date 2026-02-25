@@ -39,9 +39,9 @@ describe('MessageInput', () => {
 
   it('calls onSendMessage when form is submitted', () => {
     const mockSend = vi.fn((e) => e.preventDefault())
-    render(<MessageInput {...defaultProps} input="Test" onSendMessage={mockSend} />)
+    const { container } = render(<MessageInput {...defaultProps} input="Test" onSendMessage={mockSend} />)
 
-    const form = screen.getByRole('form')
+    const form = container.querySelector('form') as HTMLFormElement
     fireEvent.submit(form)
 
     expect(mockSend).toHaveBeenCalled()
