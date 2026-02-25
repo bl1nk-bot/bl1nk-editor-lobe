@@ -74,8 +74,8 @@ describe('Analytics', () => {
       const analyticsScripts = Array.from(scripts).filter(script =>
         script.src.includes('googletagmanager.com/gtag')
       )
-      // Should only have one script
-      expect(analyticsScripts.length).toBeLessThanOrEqual(3) // One per render
+      // Should only have one script in total
+      expect(analyticsScripts.length).toBeLessThanOrEqual(1)
     }, 0)
   })
 })
