@@ -23,12 +23,13 @@ global.google = {
 } as any
 
 describe('MapView', () => {
+  const originalCreateElement = document.createElement.bind(document)
+
   beforeEach(() => {
     vi.clearAllMocks()
     // Mock document.createElement for script tag
-    const originalCreateElement = document.createElement.bind(document)
     document.createElement = vi.fn((tagName: string) => {
-      const element = originalCreateElement(tagName)
+      const element = originalCreateElement(tagName as any)
       if (tagName === 'script') {
         // Immediately call onload to simulate script loading
         setTimeout(() => {
@@ -42,6 +43,7 @@ describe('MapView', () => {
   })
 
   afterEach(() => {
+    document.createElement = originalCreateElement as any
     vi.restoreAllMocks()
   })
 
