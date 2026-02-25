@@ -7,7 +7,15 @@ import { vi, describe, it, expect } from 'vitest'
 
 // Mock next-auth
 vi.mock('next-auth/react', () => ({
-  useSession: () => ({ data: null, status: 'unauthenticated' }),
+  useSession: () => ({
+    data: {
+      user: {
+        name: 'Test User',
+        email: 'test@example.com',
+      },
+    },
+    status: 'authenticated',
+  }),
   SessionProvider: ({ children }: { children: React.ReactNode }) => <div>{children}</div>
 }))
 
