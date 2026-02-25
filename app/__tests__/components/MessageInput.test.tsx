@@ -69,9 +69,9 @@ describe('MessageInput', () => {
 
   it('does not submit when input is empty and no file', () => {
     const mockSend = vi.fn()
-    render(<MessageInput {...defaultProps} input="" onSendMessage={mockSend} />)
+    const { container } = render(<MessageInput {...defaultProps} input="" onSendMessage={mockSend} />)
 
-    const form = screen.getByRole('form')
+    const form = container.querySelector('form') as HTMLFormElement
     fireEvent.submit(form)
 
     expect(mockSend).not.toHaveBeenCalled()
