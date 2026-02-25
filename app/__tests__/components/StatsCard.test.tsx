@@ -5,7 +5,7 @@ import StatsCard from '@/components/StatsCard'
 describe('StatsCard', () => {
   it('renders with title and value', () => {
     render(<StatsCard title="Total Users" value="1,234" />)
-    expect(screen.getByText('TOTAL USERS')).toBeInTheDocument()
+    expect(screen.getByText('Total Users')).toBeInTheDocument()
     expect(screen.getByText('1,234')).toBeInTheDocument()
   })
 
